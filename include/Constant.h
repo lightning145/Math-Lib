@@ -1,6 +1,9 @@
 #ifndef CONSTANT
 #define CONSTANT
 
+#define MD_TRUE 1
+#define MD_FALSE 0
+
 #define MD_PI 3.14159265358979323846f
 #define MD_2PI 6.283185307179586f 
 #define MD_PI_2   1.57079632679489661923f
@@ -25,8 +28,8 @@
 
 #define MD_NAN		0x0100
 #define MD_NORMAL	0x0400
-#define MD_INFINITE	(FP_NAN | FP_NORMAL)
+#define MD_INFINITE	(MD_NAN | MD_NORMAL)
 #define MD_ZERO		0x4000
-#define MD_SUBNORMAL	(FP_NORMAL | FP_ZERO)
+#define MD_SUBNORMAL	(MD_NORMAL | MD_ZERO)
 
 #endif

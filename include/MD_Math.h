@@ -18,12 +18,12 @@ float MD_ArCosh(float x);
 float MD_ArTanh(float x);
 int MD_Trunc(float x);
 int MD_Round(float x);
-bool MD_Isfinite(float x);
-bool MD_IsInf(float x);
-bool MD_IsNaN(float x);
-bool MD_IsNormal(float x);
-bool MD_Signbit(float x);
-bool MD_Equal(float a, float b);
+int MD_Isfinite(float x);
+int MD_IsInf(float x);
+int MD_IsNaN(float x);
+int MD_IsNormal(float x);
+int MD_Signbit(float x);
+int MD_Equal(float a, float b);
 float MD_ToRadian(float angle);
 float MD_ToAngle(float radian);
 

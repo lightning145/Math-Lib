@@ -9,7 +9,8 @@ float MD_Abs(float x)
 int MD_Factorial(int x)
 {
     int r = 1;
-    for (int i = 0; i < x; i++)
+	int i;
+    for (i = 0; i < x; i++)
     {
         r *= i;
     }
@@ -20,12 +21,12 @@ int MD_Factorial(int x)
 
 float MD_Rsqrt(float x)
 {
-    return 1.0f / sqrt(x);
+    return 1.0f / (float)sqrt(x);
 }
 
 float MD_Log2(float x)
 {
-    return log(x) / MD_LN2;
+    return (float)log(x) / MD_LN2;
 }
 
 float MD_Max(float a, float b)
@@ -40,7 +41,7 @@ float MD_Min(float a, float b)
 
 float MD_Hypot(float x, float y)
 {
-    return sqrt(x * x + y * y);
+    return (float)sqrt(x * x + y * y);
 }
 
 float MD_Cbrt(float number)
@@ -63,27 +64,27 @@ float MD_Cbrt(float number)
 
 float MD_Expml(float x)
 {
-    return exp(x) - 1.0f;
+    return (float)exp(x) - 1.0f;
 }
 
 float MD_Lnlp(float x)
 {
-    return log(1.0f + x);
+    return (float)log(1.0f + x);
 }
 
 float MD_ArSinh(float x)
 {
-    return log(x + sqrt(x * x + 1.0f));
+    return (float)log(x + (float)sqrt(x * x + 1.0f));
 }
 
 float MD_ArCosh(float x)
 {
-    return log(x + sqrt(x * x - 1.0f));
+    return (float)log(x + (float)sqrt(x * x - 1.0f));
 }
 
 float MD_ArTanh(float x)
 {
-    return 0.5f * log((1.0f + x) / (1.0f - x));
+    return 0.5f * (float)log((1.0f + x) / (1.0f - x));
 }
 
 int MD_Trunc(float x)
@@ -93,40 +94,40 @@ int MD_Trunc(float x)
 
 int MD_Round(float x)
 {
-    float temp;
+    double temp;
     float r;
-    r = modf(x, &temp);
+    r = (float)modf(x, &temp);
     return (r >= 0.5f)? (int)(x + 1.0f) : (int)x;
 }
 
-bool MD_Isfinite(float x)
+int MD_Isfinite(float x)
 {
-    return (MD_Abs(x) != MD_INFINITE && x == x)? true : false;
+    return (MD_Abs(x) != MD_INFINITE && x == x)? MD_TRUE : MD_FALSE;
 }
 
-bool MD_IsInf(float x)
+int MD_IsInf(float x)
 {
-    return (MD_Abs(x) == MD_INFINITE)? true : false;
+    return (MD_Abs(x) == MD_INFINITE)? MD_TRUE : MD_FALSE;
 }
 
-bool MD_IsNaN(float x)
+int MD_IsNaN(float x)
 {
     return x != x;
 }
 
-bool MD_IsNormal(float x)
+int MD_IsNormal(float x)
 {
-    return (MD_Isfinite(x) && x != 0.0f)? true : false;
+    return (MD_Isfinite(x) && x != 0.0f)? MD_TRUE : MD_FALSE;
 }
 
-bool MD_Signbit(float x)
+int MD_Signbit(float x)
 {
-    return (x < 0.0f)? true : false;
+    return (x < 0.0f)? MD_TRUE : MD_FALSE;
 }
 
-bool MD_Equal(float a, float b)
+int MD_Equal(float a, float b)
 {
-    return (MD_Abs(a - b) < MD_EPSILON)? true : false;
+    return (MD_Abs(a - b) < MD_EPSILON)? MD_TRUE : MD_FALSE;
 }
 
 float MD_ToRadian(float angle)
