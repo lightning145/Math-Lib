@@ -1,0 +1,1 @@
+g++ -I ../../include/ ../../General.c main.c -o main
