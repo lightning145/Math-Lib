@@ -12,4 +12,7 @@ target_link_libraries(test1 MD-Math)
 add_executable(test2 test/test2/main.c)
 target_link_libraries(test2 MD-Math)
 
+add_executable(test3 test/test3/main.c)
+target_link_libraries(test3 MD-Math)
+
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/)
