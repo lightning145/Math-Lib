@@ -13,6 +13,7 @@ float MD_Hypot(float x, float y);
 float MD_Cbrt(float x);
 float MD_Expml(float x);
 float MD_Lnlp(float x);
+float MD_Tan(float x);
 float MD_ArSinh(float x);
 float MD_ArCosh(float x);
 float MD_ArTanh(float x);

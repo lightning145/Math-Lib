@@ -43,6 +43,10 @@ int main()
     printf("Lnlp(2.0f): \n");
     printf("%f\n" , MD_Lnlp(2.0f) );
     printf("\n");
+
+    printf("Tan(PI_4): \n");
+    printf("%f\n" , MD_Tan(MD_PI_4) );
+    printf("\n");
     
     printf("ArSinh(0.5f): \n");
     printf("%f\n" , MD_ArSinh(0.5f) );

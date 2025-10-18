@@ -72,6 +72,11 @@ float MD_Lnlp(float x)
     return (float)log(1.0f + x);
 }
 
+float MD_Tan(float x)
+{
+    return (float)sin(x) / (float)cos(x);
+}
+
 float MD_ArSinh(float x)
 {
     return (float)log(x + (float)sqrt(x * x + 1.0f));
