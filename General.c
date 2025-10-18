@@ -144,3 +144,8 @@ float MD_ToAngle(float radian)
 {
     return radian * 180.0f * MD_1_PI;
 }
+
+float MD_Mix(float x, float y, float a)
+{
+    return x * (1.0f - a) + y * a;
+}
