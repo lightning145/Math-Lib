@@ -31,6 +31,7 @@ float MD_ToRadian(float angle);
 float MD_ToAngle(float radian);
 float MD_Mix(float x, float y, float a);
 
+//----------About Vector----------
 mdVec2 Vec2Add(mdVec2 v1, mdVec2 v2);
 mdVec3 Vec3Add(mdVec3 v1, mdVec3 v2);
 mdVec4 Vec4Add(mdVec4 v1, mdVec4 v2);
@@ -72,4 +73,21 @@ float ProjOfVec4(mdVec4 v1, mdVec4 v2);
 mdVec2 ProjVec2(mdVec2 v1, mdVec2 v2);
 mdVec3 ProjVec3(mdVec3 v1, mdVec3 v2);
 mdVec4 ProjVec4(mdVec4 v1, mdVec4 v2);
+//------------------------------
+
+//---------About Matrix----------
+mdMat MatAdd(mdMat m1, mdMat m2);
+mdMat MatMinus(mdMat m1, mdMat m2);
+mdMat MulMat(float lambda, mdMat m);
+mdMat MatMul(mdMat m1, mdMat m2);
+int MatEqual(mdMat m1, mdMat m2);
+mdVec4 MulVec(mdMat m, mdVec4 v);
+mdMat IdentityMat();
+mdMat TransposeMat(mdMat m);
+
+float DetMat(mdMat m);
+mdMat AdjointMat(mdMat m);
+mdMat InvMat(mdMat m);
+//-------------------------------
+
 #endif

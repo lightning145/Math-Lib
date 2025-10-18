@@ -4,7 +4,8 @@ project(MD-Math)
 
 add_library(MD-Math 
             General.c
-            Vector.c)
+            Vector.c
+            Matrix.c)
 
 add_executable(test1 test/test1/main.c)
 target_link_libraries(test1 MD-Math)

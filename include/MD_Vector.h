@@ -1,3 +1,6 @@
+#ifndef MD_VECTOR
+#define MD_VECTOR
+
 typedef struct mdVec2
 {
     union 
@@ -47,3 +50,5 @@ typedef struct mdIVec4 { // Just For Assimp
 typedef struct mdIVec2 { // Just For FreeType
     int x, y;
 } IVECTOR2;
+
+#endif
