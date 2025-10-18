@@ -51,4 +51,24 @@ int Vec3Equal(mdVec3 v1, mdVec3 v2);
 int Vec4Equal(mdVec4 v1, mdVec4 v2);
 
 mdVec3 VecCross(mdVec3 v1, mdVec3 v2);
+
+mdVec2 Vec2Mix(mdVec2 x, mdVec2 y, float a);
+mdVec3 Vec3Mix(mdVec3 x, mdVec3 y, float a);
+mdVec4 Vec4Mix(mdVec4 x, mdVec4 y, float a);
+
+float Vec2Len(mdVec2 v);
+float Vec3Len(mdVec3 v);
+float Vec4Len(mdVec4 v);
+
+mdVec2 Vec2Norm(mdVec2 v);
+mdVec3 Vec3Norm(mdVec3 v);
+mdVec4 Vec4Norm(mdVec4 v);
+
+float ProjOfVec2(mdVec2 v1, mdVec2 v2);
+float ProjOfVec3(mdVec3 v1, mdVec3 v2);
+float ProjOfVec4(mdVec4 v1, mdVec4 v2);
+
+mdVec2 ProjVec2(mdVec2 v1, mdVec2 v2);
+mdVec3 ProjVec3(mdVec3 v1, mdVec3 v2);
+mdVec4 ProjVec4(mdVec4 v1, mdVec4 v2);
 #endif

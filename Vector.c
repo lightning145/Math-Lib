@@ -138,3 +138,99 @@ mdVec3 VecCross(mdVec3 v1, mdVec3 v2)
     result.z = v1.x * v2.y - v2.x * v1.y;
     return result;
 }
+
+mdVec2 Vec2Mix(mdVec2 x, mdVec2 y, float a)
+{
+    return Vec2Add(MulVec2((1.0 - a), x) ,MulVec2(a, y));
+}
+
+mdVec3 Vec3Mix(mdVec3 x, mdVec3 y, float a)
+{
+    return Vec3Add(MulVec3((1.0 - a), x) ,MulVec3(a, y));
+}
+
+mdVec4 Vec4Mix(mdVec4 x, mdVec4 y, float a)
+{
+    return Vec4Add(MulVec4((1.0 - a), x) ,MulVec4(a, y));
+}
+
+float Vec2Len(mdVec2 v)
+{
+    return MD_Hypot(v.x, v.y);
+}
+
+float Vec3Len(mdVec3 v)
+{
+    return sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+}
+
+float Vec4Len(mdVec4 v)
+{
+    return sqrt(v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
+}
+
+mdVec2 Vec2Norm(mdVec2 v)
+{
+    mdVec2 result;
+    float v_len = 1.0f / Vec2Len(v);
+    result.x = v.x * v_len;
+    result.y = v.y * v_len;
+    return result;
+}
+
+mdVec3 Vec3Norm(mdVec3 v)
+{
+    mdVec3 result;
+    float v_len = 1.0f / Vec3Len(v);
+    result.x = v.x * v_len;
+    result.y = v.y * v_len;
+    result.z = v.z * v_len;
+    return result;
+}
+
+mdVec4 Vec4Norm(mdVec4 v)
+{
+    mdVec4 result;
+    float v_len = 1.0f / Vec4Len(v);
+    result.x = v.x * v_len;
+    result.y = v.y * v_len;
+    result.z = v.z * v_len;
+    result.w = v.w * v_len;
+    return result;
+}
+
+float ProjOfVec2(mdVec2 v1, mdVec2 v2)
+{
+    return Vec2Dot(v1, v2) / Vec2Len(v2);
+}
+
+float ProjOfVec3(mdVec3 v1, mdVec3 v2)
+{
+    return Vec3Dot(v1, v2) / Vec3Len(v2);
+}
+
+float ProjOfVec4(mdVec4 v1, mdVec4 v2)
+{
+    return Vec4Dot(v1, v2) / Vec4Len(v2);
+}
+
+mdVec2 ProjVec2(mdVec2 v1, mdVec2 v2)
+{
+    mdVec2 result;
+    result = MulVec2(ProjOfVec2(v1, v2), Vec2Norm(v2));
+    return result;
+}
+
+mdVec3 ProjVec3(mdVec3 v1, mdVec3 v2)
+{
+    mdVec3 result;
+    result = MulVec3(ProjOfVec3(v1, v2), Vec3Norm(v2));
+    return result;
+}
+
+mdVec4 ProjVec4(mdVec4 v1, mdVec4 v2)
+{
+    mdVec4 result;
+    result = MulVec4(ProjOfVec4(v1, v2), Vec4Norm(v2));
+    return result;
+}
