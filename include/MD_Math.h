@@ -4,6 +4,7 @@
 #include <math.h>
 #include "MD_Vector.h"
 #include "MD_Matrix.h"
+#include "MD_Quaternion.h"
 
 float MD_Abs(float x);
 int MD_Factorial(int x);
