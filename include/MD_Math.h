@@ -91,4 +91,27 @@ mdMat AdjointMat(mdMat m);
 mdMat InvMat(mdMat m);
 //-------------------------------
 
+//About Quaternion
+
+mdQuat QuatAdd(mdQuat q1, mdQuat q2);
+mdQuat QuatMinus(mdQuat q1, mdQuat q2);
+mdQuat QuatDot(mdQuat q1, mdQuat q2);
+mdQuat ScaleQuat(mdQuat q1, float scale);
+int QuatEqual(mdQuat q1, mdQuat q2);
+
+float QuatLength(mdQuat q);
+mdQuat QuatNorm(mdQuat q);
+mdQuat QuatConj(mdQuat q);
+mdQuat QuatInv(mdQuat q);
+mdQuat QuatFromAxisAngle(mdVec3 axis, float angle);
+mdQuat QuatFromMat(mdMat mat);
+
+mdMat MatFromQuat(mdQuat q);
+
+mdVec3 RotateVec(mdQuat q, mdVec3 v);
+mdQuat QuatSlerp(mdQuat q1, mdQuat q2, float t);
+mdQuat QuatLerp(mdQuat q1, mdQuat q2, float t);
+
+//-------------------------------
+
 #endif
