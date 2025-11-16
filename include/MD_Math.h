@@ -114,4 +114,22 @@ mdQuat QuatLerp(mdQuat q1, mdQuat q2, float t);
 
 //-------------------------------
 
+mdMat ScaleMatrix(mdVec3 scale);
+mdMat TranslationMatrix(mdVec3 pos);
+
+mdMat RotationXMatrix(float angle);
+mdMat RotationYMatrix(float angle);
+mdMat RotationZMatrix(float angle);
+
+mdMat ViewMatrixRH(mdVec3 Pos,
+               mdVec3 Front,
+               mdVec3 Up);
+
+mdMat ViewMatrixLH(mdVec3 Pos,
+               mdVec3 Front,
+               mdVec3 Up);               
+
+mdMat PerspcetiveMatrixRH(float fov, float aspect, float n, float f);      
+mdMat PerspcetiveMatrixLH(float fov, float aspect, float n, float f);             
+
 #endif
