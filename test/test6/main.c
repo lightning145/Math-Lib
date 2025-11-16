@@ -259,7 +259,7 @@ void Init(HINSTANCE instanceHanled, int show)
 
     windowHandle = CreateWindowA(
         "Window Class",
-        "Test 5",
+        "Test 6 - Direct3D 9",
         WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT,
         CW_USEDEFAULT,
